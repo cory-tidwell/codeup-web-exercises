@@ -39,3 +39,6 @@ var howLong = prompt('How many days would you like to rent it?');
 var total = parseInt(howLong) * 3;
 
 alert('You rented ' + myMovie + ' for ' + howLong + ' days and it costs ' + total + ' dollars!');
+
+
+
