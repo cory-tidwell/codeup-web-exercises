@@ -13,8 +13,9 @@ var daysMovie2 = prompt('How many days would you like to rent it?');
 var daysMovie3 = prompt('How many days would you like to rent it?');
 
 var total = parseInt(daysMovie1) + parseInt(daysMovie2) + parseInt(daysMovie3);
+var cost = 3
 
-alert('Your total is: ' + total);
+alert('Your total is: ' + total * cost);
 
 // Suppose you're working as a contractor for 3 companies: Google, Amazon and
 // Facebook, they pay you a different rate per hour. Google pays $400, Amazon $380,
