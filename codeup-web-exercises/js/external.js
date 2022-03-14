@@ -1,15 +1,20 @@
 // You have rented some movies for your kids: The little mermaid (for 3 days), Brother
 // Bear (for 5 days, they love it), and Hercules (1 day, you don't know yet if they're
 // going to like it). If price for a movie per day is $3, how much will you have to pay?
+alert("Welcome to Blockbuster!");
+alert("Available to rent: The Little Mermaid, Hercules, Brother Bear")
 
-// alert("Welcome to Blockbuster!");
-// alert("Available to rent: The Little Mermaid, Hercules, Brother Bear")
-//
-// var myMovie = prompt('What movie would you like to rent?');
-// var howLong = prompt('How many days would you like to rent it?');
-// var total = parseInt(howLong) * 3;
-//
-// alert('You rented ' + myMovie + ' for ' + howLong + ' days and it costs ' + total + ' dollars!');
+var myMovie1 = prompt('What movie would you like to rent?');
+var myMovie2 = prompt('What movie would you like to rent?');
+var myMovie3 = prompt('What movie would you like to rent?');
+
+var daysMovie1 = prompt('How many days would you like to rent it?');
+var daysMovie2 = prompt('How many days would you like to rent it?');
+var daysMovie3 = prompt('How many days would you like to rent it?');
+
+var total = parseInt(daysMovie1) + parseInt(daysMovie2) + parseInt(daysMovie3);
+
+alert('Your total is: ' + total);
 
 // Suppose you're working as a contractor for 3 companies: Google, Amazon and
 // Facebook, they pay you a different rate per hour. Google pays $400, Amazon $380,
@@ -29,14 +34,14 @@
 // A student can be enrolled in a class only if the class is not full and the class schedule
 // does not conflict with her current schedule.
 
-var classFull = prompt('is the class full? (true/false)');
-var scheduleConflict = prompt('does it conflict with your schedule? (true/false)');
-
-if (classFull == 'false' && scheduleConflict == 'false') {
-    alert('You can enroll!');
-} else {
-    alert('You cannot enroll at this time!');
-}
+// var classFull = prompt('is the class full? (true/false)');
+// var scheduleConflict = prompt('does it conflict with your schedule? (true/false)');
+//
+// if (classFull == 'false' && scheduleConflict == 'false') {
+//     alert('You can enroll!');
+// } else {
+//     alert('You cannot enroll at this time!');
+// }
 
 // A product offer can be applied only if a person buys more than 2 items,
 // and the offer has not expired. Premium members do not need to buy a specific amount of products.
