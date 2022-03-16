@@ -24,14 +24,14 @@
  * console.log 'helloMessage' to check your work
  */
 
-var myName = "Cory";
-var helloMessage = sayHello(myName);
-sayHello(myName);
-function sayHello(hiCodeup) {
-    // console.log(hiCodeup);
-    return 'Hello, ' + hiCodeup + '!';
-}
-console.log(helloMessage);
+// var myName = "Cory";
+// var helloMessage = sayHello(myName);
+// sayHello(myName);
+// function sayHello(hiCodeup) {
+//     // console.log(hiCodeup);
+//     return 'Hello, ' + hiCodeup + '!';
+// }
+// console.log(helloMessage);
 
 /**
  * TODO:
@@ -39,27 +39,27 @@ console.log(helloMessage);
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-
-var myName = "Cory";
-
-sayHello(myName);
-function sayHello(hiCodeup) {
-    return 'Hello, ' + hiCodeup + '!';
-}
+//
+// var myName = "Cory";
+//
+// sayHello(myName);
+// function sayHello(hiCodeup) {
+//     return 'Hello, ' + hiCodeup + '!';
+// }
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-var random = Math.floor((Math.random() * 3) + 1);
-var myResult = isTwo(random);
-
-function isTwo(random) {
-    if (random == 2) {
-        return true;
-    } else {
-        return false;
-    }
-}
-console.log(myResult);
+// var random = Math.floor((Math.random() * 3) + 1);
+// var myResult = isTwo(random);
+//
+// function isTwo(num) {
+//     if (num == 2) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// console.log(myResult);
 
 /**
  * TODO:
@@ -91,17 +91,17 @@ console.log(myResult);
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-var myTip = 20;
-var myBill = 37;
-var tipPaid = calculateTip(myTip, myBill);
-
-function calculateTip(myTip, myBill) {
-var tip = (myTip / 100) * myBill;
-// console.log(tip);
-return tip;
-
-}
-console.log('$' + tipPaid);
+// var myTip = 20;
+// var myBill = 37;
+// var tipPaid = calculateTip(myTip, myBill);
+//
+// function calculateTip(myTip, myBill) {
+// var tip = (myTip / 100) * myBill;
+// // console.log(tip);
+// return tip;
+//
+// }
+// console.log('$' + tipPaid);
 
 
 /**
@@ -111,20 +111,20 @@ console.log('$' + tipPaid);
  * then display the dollar amount they should tip
  */
 
-alert('Please enter your bill and how much you would like to tip!');
-
-var myBill = prompt('How much was your bill?');
-var myTip = prompt('What percentage would you like to tip?');
-
-var tipPaid = calculateTip(myTip, myBill);
-
-function calculateTip(myTip, myBill) {
-    var tip = (myTip / 100) * myBill;
-// console.log(tip);
-    return tip;
-
-}
-console.log('Thank you for the '+ '$' + tipPaid + ' tip :)');
+// alert('Please enter your bill and how much you would like to tip!');
+//
+// var myBill = prompt('How much was your bill?');
+// var myTip = prompt('What percentage would you like to tip?');
+//
+// var tipPaid = calculateTip(myTip, myBill);
+//
+// function calculateTip(myTip, myBill) {
+//     var tip = (myTip / 100) * myBill;
+// // console.log(tip);
+//     return tip;
+//
+// }
+// console.log('Thank you for the '+ '$' + tipPaid + ' tip :)');
 
 /**
  * TODO:
@@ -145,10 +145,30 @@ var originalPrice = 50;
 var discountPercent = .2;
 var totalafterDiscount = applyDiscount(originalPrice, discountPercent);
 
-function applyDiscount(orPrice, disPrice) {
-     var amountOff = (orPrice * disPrice);
+function applyDiscount(orPrice, disPerc) {
+     var amountOff = (orPrice * disPerc);
      console.log(amountOff);
      var finalPrice = (orPrice - amountOff);
      return finalPrice;
 }
 console.log('$' + totalafterDiscount);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.location.assign("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+
+
+
