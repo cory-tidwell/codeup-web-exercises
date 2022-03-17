@@ -93,24 +93,24 @@
  * function to show it to the user.
  */
 
-var myColor = prompt('What is your favorite color?');
-var favColor = analyzeColor(myColor);
-
-analyzeColor(myColor);
-function analyzeColor(color) {
-    var myfavColor = color;
-    if(color === "red") {
-        return "Your favorite color is " + color + "!";
-    } else if(color === "green") {
-        return "Your favorite color is " + color + "!";
-    } else if(color === "blue") {
-        return "Your favorite color is " + color + "!";
-    } else {
-        return "I'm really not a fan of " + color + "!";
-    }
-    return myfavColor;
-}
-console.log(favColor);
+// var myColor = prompt('What is your favorite color?');
+// var favColor = analyzeColor(myColor);
+//
+// analyzeColor(myColor);
+// function analyzeColor(color) {
+//     var myfavColor = color;
+//     if(color === "red") {
+//         return "Your favorite color is " + color + "!";
+//     } else if(color === "green") {
+//         return "Your favorite color is " + color + "!";
+//     } else if(color === "blue") {
+//         return "Your favorite color is " + color + "!";
+//     } else {
+//         return "I'm really not a fan of " + color + "!";
+//     }
+//     return myfavColor;
+// }
+// console.log(favColor);
 
 /**
  * TODO:
@@ -131,30 +131,30 @@ console.log(favColor);
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-// var luckyNumber = Math.floor(Math.random() * 6);
-// var currentPrice = 60;
-// var disPrice = calculateTotal(luckyNumber, currentPrice);
-// var totalPrice = (currentPrice - disPrice);
-// calculateTotal(luckyNumber, currentPrice);
-// function calculateTotal(randomNumber, oriPrice) {
-//     var myDiscount = randomNumber;
-//     if (randomNumber === 0) {
-//         return (0 * oriPrice);
-//     } else if (randomNumber === 1) {
-//         return (.1 * oriPrice);
-//     } else if (randomNumber === 2) {
-//         return (.25 * oriPrice);
-//     } else if (randomNumber === 3) {
-//         return (.35 * oriPrice);
-//     } else if (randomNumber === 4) {
-//         return (.5 * oriPrice);
-//     } else if (randomNumber === 5) {
-//         return (1 * oriPrice);
-//     }
-//     console.log(myDiscount);
-//     return myDiscount;
-// }
-// console.log(totalPrice);
+var luckyNumber = Math.floor(Math.random() * 6);
+var currentPrice = 60;
+var disPrice = calculateTotal(luckyNumber, currentPrice);
+var totalPrice = (currentPrice - disPrice);
+calculateTotal(luckyNumber, currentPrice);
+function calculateTotal(randomNumber, oriPrice) {
+ //   var myDiscount = randomNumber;
+    if (randomNumber === 0) {
+        return (0 * oriPrice);
+    } else if (randomNumber === 1) {
+        return (.1 * oriPrice);
+    } else if (randomNumber === 2) {
+        return (.25 * oriPrice);
+    } else if (randomNumber === 3) {
+        return (.35 * oriPrice);
+    } else if (randomNumber === 4) {
+        return (.5 * oriPrice);
+    } else if (randomNumber === 5) {
+        return (1 * oriPrice);
+    }
+    // console.log(myDiscount);
+    // return myDiscount;
+}
+console.log('You received a $' + disPrice + ' discount and your total is $' + totalPrice);
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -218,11 +218,11 @@ console.log(favColor);
 //     console.log('Sorry you dont feel like playing!');
 // }
 //
-// isEvenorOdd(randomNumber);
+// isEvenOrOdd(randomNumber);
 // add100(randomNumber);
 // isPositiveOrNegative(randomNumber);
 //
-// function isEvenorOdd(randNumb) {
+// function isEvenOrOdd(randNumb) {
 //     if (randNumb % 2 === 0) {
 //         alert('Your number is even.');
 //     } else {
@@ -244,16 +244,41 @@ console.log(favColor);
 //
 // }
 
+// var didConfirm = confirm('Please enter a random number?');
+// if (didConfirm === true) {
+//     var strNumber = prompt('What is your random number?');
+//     var realNumber = parseInt(strNumber);
+// } else {
+//     console.log('Sorry you dont feel like playing!');
+// }
+// if (isNaN(realNumber)) {
+//     alert('You input the incorrect data type!');
+// } else {
+//     alert('You are good to go!');
+// }
+// console.log(realNumber);
+
 var didConfirm = confirm('Please enter a random number?');
 if (didConfirm === true) {
     var strNumber = prompt('What is your random number?');
     var realNumber = parseInt(strNumber);
 } else {
     console.log('Sorry you dont feel like playing!');
+  //  window.stop;
 }
-if (isNaN(realNumber)) {
-    alert('You input the incorrect data type!');
+
+//if (isNaN(realNumber)) {
+if (typeof realNumber !== 'number') {
+    console.log("Maybe next time!");
 } else {
-    alert('You are good to go!');
+    checkDataType(realNumber);
 }
+    function checkDataType(checkIfNumber) {
+        if (isNaN(checkIfNumber)) {
+            alert('You input the incorrect data type!');
+        } else {
+            alert('You are good to go!');
+        }
+    }
+
 console.log(realNumber);
