@@ -131,30 +131,32 @@
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-var luckyNumber = Math.floor(Math.random() * 6);
-var currentPrice = 60;
-var disPrice = calculateTotal(luckyNumber, currentPrice);
-var totalPrice = (currentPrice - disPrice);
-calculateTotal(luckyNumber, currentPrice);
-function calculateTotal(randomNumber, oriPrice) {
- //   var myDiscount = randomNumber;
-    if (randomNumber === 0) {
-        return (0 * oriPrice);
-    } else if (randomNumber === 1) {
-        return (.1 * oriPrice);
-    } else if (randomNumber === 2) {
-        return (.25 * oriPrice);
-    } else if (randomNumber === 3) {
-        return (.35 * oriPrice);
-    } else if (randomNumber === 4) {
-        return (.5 * oriPrice);
-    } else if (randomNumber === 5) {
-        return (1 * oriPrice);
-    }
-    // console.log(myDiscount);
-    // return myDiscount;
-}
-console.log('You received a $' + disPrice + ' discount and your total is $' + totalPrice);
+// var luckyNumber = Math.floor(Math.random() * 6);
+// var currentPrice = 60;
+// var disPrice = calculateTotal(luckyNumber, currentPrice);
+// var totalPrice = (currentPrice - disPrice);
+// calculateTotal(luckyNumber, currentPrice);
+// function calculateTotal(randomNumber, oriPrice) {
+//  //   var myDiscount = randomNumber;
+//     if (randomNumber === 0) {
+//         return (0 * oriPrice);
+//     } else if (randomNumber === 1) {
+//         return (.1 * oriPrice);
+//     } else if (randomNumber === 2) {
+//         return (.25 * oriPrice);
+//     } else if (randomNumber === 3) {
+//         return (.35 * oriPrice);
+//     } else if (randomNumber === 4) {
+//         return (.5 * oriPrice);
+//     } else if (randomNumber === 5) {
+//         return (1 * oriPrice);
+//     } else {
+//         return "Input is invalid";
+//     }
+//     // console.log(myDiscount);
+//     // return myDiscount;
+// }
+// console.log('You received a $' + disPrice + ' discount and your total is $' + totalPrice);
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -208,41 +210,42 @@ console.log('You received a $' + disPrice + ' discount and your total is $' + to
  * HINT: The way we prompt for a value could be improved
  */
 
-// var didConfirm = confirm('Please enter a random number?');
-// if (didConfirm === true) {
-//        var randomNumber = prompt('What is your random number?');
-//        randomNumber = parseInt(randomNumber);
-// } else if (randomNumber === Number) {
-//     alert('You input the incorrect data type!');
+var didConfirm = confirm('Please enter a random number?');
+if (didConfirm === true) {
+       var randomNumber = prompt('What is your random number?');
+       randomNumber = parseInt(randomNumber);
+   } else if (isNaN(randomNumber)) {
+    alert('You input the incorrect data type!');
+} else {
+    console.log('Sorry you dont feel like playing!');
+}
+if (isNaN(randomNumber)) {
+    console.log('Goodbye1');
+} else {
+    isEvenOrOdd(randomNumber);
+    add100(randomNumber);
+    isPositiveOrNegative(randomNumber);
 // } else {
-//     console.log('Sorry you dont feel like playing!');
-// }
-//
-// isEvenOrOdd(randomNumber);
-// add100(randomNumber);
-// isPositiveOrNegative(randomNumber);
-//
-// function isEvenOrOdd(randNumb) {
-//     if (randNumb % 2 === 0) {
-//         alert('Your number is even.');
-//     } else {
-//         alert('Your number is odd.');
-//     }
-// }
-//
-// function add100(randNumb) {
-//     alert(parseInt(randNumb) + 100);
-//     return parseInt(randNumb)+100;
-// }
-//
-// function isPositiveOrNegative(randNumb) {
-//     if (randNumb > 0) {
-//         alert('Your number is positive.');
-//     } else {
-//         alert('Your number is negative.');
-//     }
-//
-// }
+//     console.log('Sorry, not a number!');
+}
+function isEvenOrOdd(randNumb) {
+    if (randNumb % 2 === 0) {
+        alert('Your number is even.');
+    } else {
+        alert('Your number is odd.');
+    }
+}
+function add100(randNumb) {
+    alert(parseInt(randNumb) + 100);
+    return parseInt(randNumb)+100;
+}
+function isPositiveOrNegative(randNumb) {
+    if (randNumb > 0) {
+        alert('Your number is positive.');
+    } else {
+        alert('Your number is negative.');
+    }
+}
 
 // var didConfirm = confirm('Please enter a random number?');
 // if (didConfirm === true) {
