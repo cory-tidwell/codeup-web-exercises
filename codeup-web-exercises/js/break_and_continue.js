@@ -8,9 +8,9 @@
 
 do {
 
-    var i = prompt("Input a number between 1 and 50:");
+    var i = parseInt(prompt("Input a number between 1 and 50:"));
    // var y = i;
-        if (i % 2 !== 0) {
+        if (i % 2 !== 0 && i < 50) {
             for (var y = 1; y < 50; y += 2){
                 if ( y == i) {
                     console.log("Yikes! Skipping number: " + i);
@@ -21,7 +21,7 @@ do {
             }}
         break;
 }}
-while (i % 2 === 0)
+while (i % 2 === 0 || i < 0 || i > 50 || isNaN(i))
 
 
 //

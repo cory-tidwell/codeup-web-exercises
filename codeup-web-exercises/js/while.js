@@ -15,7 +15,9 @@ console.log(myCones);
 do {
     var remainingCones = allCones -= myCones;
     console.log(remainingCones);
-
+        if (remainingCones < myCones) {
+            console.log("We are outta cones!");
+        }
 }
 
 while (allCones > myCones);
