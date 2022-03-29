@@ -59,8 +59,15 @@ var person = {
         {name: 'George', amount: 320}
     ];
 
-Object.entries(shoppers).forEach(([key, value]) => {
-    console.log(key, value);
+Object.values(shoppers).forEach((val) => {
+    if ( val.amount >= 200) {
+        var discount = (.12 * val.amount);
+        var total = val.amount - (.12 * val.amount);
+        console.log(val.name + " before discount: $" + val.amount + " amount off $" + discount + " Amount after discount $" + total);
+        // console.log(shoppers.name);
+    } else if (val.amount < 200) {
+        console.log(val.name + " doesn't get a discount, you owe $" + val.amount);
+    }
     })
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -74,6 +81,36 @@ Object.entries(shoppers).forEach(([key, value]) => {
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+// var books = [
+//         {
+//             title: "Cyptoassets",
+//             firstName: "Chris",
+//             lastName: "Burniske",
+//         },
+//         {
+//             title: "Blockchain Revolution",
+//             firstName: "Alex",
+//             lastName: "Tapscott",
+//         },
+//         {
+//             title: "The Book of Satoshi",
+//             firstName: "Phil",
+//             lastName: "Champagne",
+//         },
+//         {
+//             title: "The Basics of Bitcoins and Blockchains",
+//             firstName: "Antony",
+//             lastName: "Lewis",
+//         },
+//         {
+//             title: "The Blockchain Developer",
+//             firstName: "Elad",
+//             lastName: "Elrom",
+//         }]
+// console.log(books[0].title);
+// console.log(books[0].firstName);
+// console.log(books[0].lastName);
+
 
     /**
      * TODO:
@@ -99,7 +136,37 @@ Object.entries(shoppers).forEach(([key, value]) => {
      *      ---
      *      ...
      */
+    var books = [
 
+        {
+            title: "Cryptoassets",
+            Author: {firstName: "Chris", lastName: "Burniske"}
+        },
+        {
+            title: "Blockchain Revolution",
+            Author: {firstName: "Alex", lastName: "Tapscott"}
+        },
+        {
+            title: "The Book of Satoshi",
+            Author: {firstName: "Phil", lastName: "Champagne"}
+        },
+        {
+            title: "The Basics of Bitcoins and Blockchains",
+            Author: {firstName: "Antony", lastName: "Lewis"}
+        },
+        {
+            title: "The Blockchain Developer",
+            Author: {firstName: "Elad", lastName: "Elrom"}
+        },
+        ]
+
+    for (var i = 0, j = 1; i <= books.length, j <= 5; i++, j++) {
+        console.log("Book " + (j));
+        console.log("Title: " + books[i].title);
+        console.log("Author: " + books[i].Author.firstName + " " + books[i].Author.lastName);
+        console.log("__________________");
+
+    }
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -110,5 +177,12 @@ Object.entries(shoppers).forEach(([key, value]) => {
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+//     function createBook(title, author) {
+//         console.log(object.entries(books));
+//     }
+// createBook("Cryptoassets", "Chris Buiniske");
 
+    Object.entries(books).forEach((val) => {
+        console.log()
+    }
 })();
