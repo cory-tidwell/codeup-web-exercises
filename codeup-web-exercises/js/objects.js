@@ -1,5 +1,5 @@
 (function() {
-    "use strict";
+  "use strict";
 
     /**
      * TODO:
@@ -11,10 +11,10 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-var person = {
-        firstName: "Cory Tidwell",
-        lastName: "Tidwell",
-    }
+// var person = {
+//         firstName: "Cory Tidwell",
+//         lastName: "Tidwell",
+ //   }
         // age: 39,
         // cityBorn: "Los Angeles",
         // cityLive: "White Marsh",
@@ -31,14 +31,14 @@ var person = {
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    var person = {
-        firstName: "Cory",
-        lastName: "Tidwell",
-        sayHello: function () {
-            return console.log("Hello from " + person.firstName +" " + person.lastName + "!");
-        }
-    }
-    console.log(person.sayHello());
+    // var person = {
+    //     firstName: "Cory",
+    //     lastName: "Tidwell",
+    //     sayHello: function () {
+    //         return console.log("Hello from " + person.firstName +" " + person.lastName + "!");
+    //     }
+    // }
+    // console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -53,22 +53,22 @@ var person = {
      * and console.log the relevant messages for each person
      */
 
-    var shoppers = [
-        {name: 'Cameron', amount: 180},
-        {name: 'Ryan', amount: 250},
-        {name: 'George', amount: 320}
-    ];
-
-Object.values(shoppers).forEach((val) => {
-    if ( val.amount >= 200) {
-        var discount = (.12 * val.amount);
-        var total = val.amount - (.12 * val.amount);
-        console.log(val.name + " before discount: $" + val.amount + " amount off $" + discount + " Amount after discount $" + total);
-        // console.log(shoppers.name);
-    } else if (val.amount < 200) {
-        console.log(val.name + " doesn't get a discount, you owe $" + val.amount);
-    }
-    })
+//     var shoppers = [
+//         {name: 'Cameron', amount: 180},
+//         {name: 'Ryan', amount: 250},
+//         {name: 'George', amount: 320}
+//     ];
+//
+// Object.values(shoppers).forEach((val) => {
+//     if ( val.amount >= 200) {
+//         var discount = (.12 * val.amount);
+//         var total = val.amount - (.12 * val.amount);
+//         console.log(val.name + " before discount: $" + val.amount + " amount off $" + discount + " Amount after discount $" + total);
+//         // console.log(shoppers.name);
+//     } else if (val.amount < 200) {
+//         console.log(val.name + " doesn't get a discount, you owe $" + val.amount);
+//     }
+//     })
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -160,13 +160,13 @@ Object.values(shoppers).forEach((val) => {
         },
         ]
 
-    for (var i = 0, j = 1; i <= books.length, j <= 5; i++, j++) {
-        console.log("Book " + (j));
-        console.log("Title: " + books[i].title);
-        console.log("Author: " + books[i].Author.firstName + " " + books[i].Author.lastName);
-        console.log("__________________");
-
-    }
+    // for (var i = 0, j = 1; i <= books.length, j <= 5; i++, j++) {
+    //     console.log("Book " + (j));
+    //     console.log("Title: " + books[i].title);
+    //     console.log("Author: " + books[i].Author.firstName + " " + books[i].Author.lastName);
+    //     console.log("__________________");
+    //
+    // }
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -177,12 +177,16 @@ Object.values(shoppers).forEach((val) => {
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-//     function createBook(title, author) {
-//         console.log(object.entries(books));
-//     }
+    function createBook() {
+        console.log(title, Author);
+        var {title, Author} = books[0];
+        console.log(title);
+        console.log(Author);
+    }
+    createBook();
 // createBook("Cryptoassets", "Chris Buiniske");
 
-    Object.entries(books).forEach((val) => {
-        console.log()
-    }
+    // Object.entries(books).forEach((val) => {
+    //     console.log();
+    //}
 })();
