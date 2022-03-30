@@ -12,7 +12,7 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 // var person = {
-//         firstName: "Cory Tidwell",
+//         firstName: "Cory",
 //         lastName: "Tidwell",
  //   }
         // age: 39,
@@ -160,13 +160,13 @@
         },
         ]
 
-    // for (var i = 0, j = 1; i <= books.length, j <= 5; i++, j++) {
-    //     console.log("Book " + (j));
-    //     console.log("Title: " + books[i].title);
-    //     console.log("Author: " + books[i].Author.firstName + " " + books[i].Author.lastName);
-    //     console.log("__________________");
-    //
-    // }
+    for (var i = 0, j = 1; i <= books.length, j <= 5; i++, j++) {
+        console.log("Book " + (j));
+        console.log("Title: " + books[i].title);
+        console.log("Author: " + books[i].Author.firstName + " " + books[i].Author.lastName);
+        console.log("__________________");
+
+    }
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
