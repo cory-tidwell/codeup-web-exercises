@@ -1,0 +1,29 @@
+.blue-border{
+    border: 3px;
+}
+
+.font-family-change {
+    font-family: "American Typewriter";
+}
+.dark-mode {
+    background-color: black;
+}
+ul>li {
+    color: white;
+}
+/*ul li {*/
+/*    color: darkcyan;*/
+/*}*/
+
+/*#big-font {*/
+/*    color: darkviolet;*/
+/*}*/
+
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+
+/*id -> clas -> nested -> name*/
