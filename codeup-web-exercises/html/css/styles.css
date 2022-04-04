@@ -18,3 +18,10 @@ body {
 }
 ol { list-style: upper-alpha; }
 ul { list-style: square; }
+
+video {
+    width: 20%;
+    height: 56.25%;
+    margin-top: 21.875%;
+
+}
