@@ -10,27 +10,35 @@
 // if your array has non-numbers can you still sort the numbers? ex: input: [3,“b”,8,5,9,true”, 4,“xyz”] expected output: [3,4,5,8,9];
 
 
-var myArray = [5,-8,2,6,9,'b',3,2];
+var myArray = [5,-8,2,6,9,'b',3,2,"hello",33,'t'];
 var noDupeArray = [];
-var placeHolder;
-//console.log(myArray.sort());
+var result = [];
 
-function sortArr (input) {
-    // if ( !(/[0-9]/.test(input[i]))) {
-    //     input[i].slice(i);
-    // }
-    input = input.sort();
-    for (var i = 0; i < myArray.length; i++) {
-        if ( !(/[0-9]/.test(input[i]))) {
-           input.splice(1,i);
-        }
-        if(input[i] !== placeHolder) {
-           noDupeArray.push(input[i]);
-           placeHolder = input[i];
-        }
+    function sortArr(input) {
+        noDupeArray = [...new Set(input)];
+        for (var i = 0; i < noDupeArray.length; i++) {
+            if ((/[0-9]/.test(noDupeArray[i]))) {
+                result.push(noDupeArray[i])
+            }
+        } return result.sort();
     }
-    //return input;
-    return noDupeArray;
-}
-
-sortArr(myArray);
+console.log(sortArr(myArray))
+// function sortArr (input) {
+//     // if ( !(/[0-9]/.test(input[i]))) {
+//     //     input[i].slice(i);
+//     // }
+//     input = input.sort();
+//     for (var i = 0; i < myArray.length; i++) {
+//         if ( !(/[0-9]/.test(input[i]))) {
+//            input.splice(1,i);
+//         }
+//         if(input[i] !== placeHolder) {
+//            noDupeArray.push(input[i]);
+//            placeHolder = input[i];
+//         }
+//     }
+//     //return input;
+//     return noDupeArray;
+// }
+//
+// sortArr(myArray);
