@@ -21,47 +21,47 @@
 // getPrimes(100);
 
 
-
-function findPrimes() {
-    var count = 0;
-    var i;
-    var j;
-    var counter = 50;
-    var a = [];
-
-
-    // while (a.length < 50) {
-        for (j = 2; j <= 100; j++) {
-        // if (j + 1 % 2 == 0)
-        //     break;
-            for (i = 1; i <= j; i++) {
-          //  console.log(j);
-                if (j % i == 0)
-                    count++
-
-        }
-            if (count == 2) {
-                //console.log(j);
-                a.push(j);
-                console.log(j);
-        }
-
-        count = 0
-    }
-}
-findPrimes();
-
-var primeArray = [];
-var count = 0;
-var j = 2;
-
-do {
-    for (var i = 1; i <= j; i++) {
-        (j % i === 0) ? count++ : false;
-    }
-    (count === 2) ? primeArray.push(j) : false;
-    count = 0;
-    j += 1;
-} while (primeArray.length < 50);
-
-console.log(primeArray);
+//
+// function findPrimes() {
+//     var count = 0;
+//     var i;
+//     var j;
+//     var counter = 50;
+//     var a = [];
+//
+//
+//     // while (a.length < 50) {
+//         for (j = 2; j <= 100; j++) {
+//         // if (j + 1 % 2 == 0)
+//         //     break;
+//             for (i = 1; i <= j; i++) {
+//           //  console.log(j);
+//                 if (j % i == 0)
+//                     count++
+//
+//         }
+//             if (count == 2) {
+//                 //console.log(j);
+//                 a.push(j);
+//                 console.log(j);
+//         }
+//
+//         count = 0
+//     }
+// }
+// findPrimes();
+//
+// var primeArray = [];
+// var count = 0;
+// var j = 2;
+//
+// do {
+//     for (var i = 1; i <= j; i++) {
+//         (j % i === 0) ? count++ : false;
+//     }
+//     (count === 2) ? primeArray.push(j) : false;
+//     count = 0;
+//     j += 1;
+// } while (primeArray.length < 50);
+//
+// console.log(primeArray);
