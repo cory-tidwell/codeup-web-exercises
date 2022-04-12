@@ -22,34 +22,32 @@
 
 
 //
-// function findPrimes() {
-//     var count = 0;
-//     var i;
-//     var j;
-//     var counter = 50;
-//     var a = [];
-//
-//
-//     // while (a.length < 50) {
-//         for (j = 2; j <= 100; j++) {
-//         // if (j + 1 % 2 == 0)
-//         //     break;
-//             for (i = 1; i <= j; i++) {
-//           //  console.log(j);
-//                 if (j % i == 0)
-//                     count++
-//
-//         }
-//             if (count == 2) {
-//                 //console.log(j);
-//                 a.push(j);
-//                 console.log(j);
-//         }
-//
-//         count = 0
-//     }
-// }
-// findPrimes();
+function findPrimes() {
+    var count = 0;
+    var i;
+    var j;
+    var counter = 50;
+    var a = [];
+
+    do {
+        for (j = 2; j <= j; j++) {
+            // if (j + 1 % 2 == 0)
+            //     break;
+            for (i = 1; i <= j; i++) {
+                if (j % i == 0)
+                    count++
+            }
+            if (count == 2) {
+                //console.log(j);
+                a.push(j);
+                console.log(j);
+                j++
+            }
+            count = 0
+        }
+    } while (a.length < 50);
+}
+findPrimes();
 //
 // var primeArray = [];
 // var count = 0;
