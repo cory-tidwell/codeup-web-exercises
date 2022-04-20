@@ -1,0 +1,76 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+    font-size: 12px;
+
+}
+
+.message {
+    /* There must be a separation of 8px between the text and the border of this element */
+    padding: 8px;
+    /* The text color of this element should be white and bold */
+    /*color: blue;*/
+    font-weight: bold;
+    /* The border of this element should be 1px, and its color should be light grey */
+    border: 1px lightgrey;
+    border-radius: 8px;
+    width: calc(100% - 35px);
+    margin: 8px;
+
+    /*background-color: #7e97cc;*/
+}
+.message-info {
+    /* There must be a separation of 8px between the text and the border of this element */
+    padding: 8px;
+    /* The text color of this element should be white and bold */
+    color: blue;
+    font-weight: bold;
+    /* The border of this element should be 1px, and its color should be light grey */
+    /*border: 1px;*/
+    /*border-radius: 8px;*/
+    /*width: calc(100% - 40px);*/
+    /*margin-bottom: 10px;*/
+    background-color: #7e97cc;
+}
+.message-success {
+    /* There must be a separation of 8px between the text and the border of this element */
+    padding: 8px;
+    /* The text color of this element should be white and bold */
+    color: green;
+    font-weight: bold;
+    /* The border of this element should be 1px, and its color should be light grey */
+    /*border: 1px;*/
+    /*border-radius: 8px;*/
+    /*width: calc(100% - 40px);*/
+    /*margin-bottom: 10px;*/
+    background-color: #62bd9f;
+}
+.message-warning {
+    /* There must be a separation of 8px between the text and the border of this element */
+    padding: 8px;
+    /* The text color of this element should be white and bold */
+    color: gray;
+    font-weight: bold;
+    /* The border of this element should be 1px, and its color should be light grey */
+    /*border: 1px;*/
+    /*border-radius: 8px;*/
+    /*width: calc(100% - 80px);*/
+    /*margin: auto;*/
+    background-color: #ecf2b8;
+}
+.message-error {
+    /* There must be a separation of 8px between the text and the border of this element */
+    padding: 8px;
+    /* The text color of this element should be white and bold */
+    color: red;
+    font-weight: bold;
+    /* The border of this element should be 1px, and its color should be light grey */
+    /*border: 1px;*/
+    /*border-radius: 8px;*/
+    /*width: calc(100% - 80px);*/
+    /*margin: auto;*/
+    background-color: #f7c2b5;
+}

@@ -1,0 +1,27 @@
+/*
+multi
+line
+comment
+*/
+
+.fancy-header {
+    color: purple; /* single line comment */
+    text-decoration: underline;
+    text-align: center;
+}
+
+body {
+    background-color: olive;
+    background-image: url("../../html/images/rick-roll.gif");
+    font-family: Arial;
+
+}
+ol { list-style: upper-alpha; }
+ul { list-style: square; }
+
+video {
+    width: 20%;
+    height: 56.25%;
+    margin-top: 21.875%;
+
+}

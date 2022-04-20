@@ -1,0 +1,96 @@
+body {
+    background-color: #F0F0F0;
+}
+/*navbar*/
+/*#nav-container {*/
+/*    position: relative;*/
+/*    top:0;*/
+/*    right: 0;*/
+/*    left: 0;*/
+/*    margin-top: 6em;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*#codeup-design{*/
+/*    text-align: center;*/
+/*    font-size: 54px;*/
+
+
+/*}*/
+#nav-image {
+    width: 80px;
+    height:80px;
+    /*margin: 0;*/
+    /*justify-content: space-between;*/
+    /*position: relative;*/
+    /*position: absolute;*/
+    /*top:-6em;*/
+    /*margin-left: 0px;*/
+    /*margin-right: auto;*/
+    /*left: 0;*/
+    /*right: 0;*/
+
+}
+.my-circle {
+    box-sizing: border-box;
+    height: 105px;
+    width: 105px;
+    border: white solid 5px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 5px 10px;
+
+
+}
+.design {
+    background-color: #E6563B;
+
+}
+
+.develop {
+    background-color: #DE9F3D;
+}
+
+.support {
+    background-color: #7CB06C;
+}
+
+.host {
+    background-color: #00ABA9;
+
+#center-text {
+    padding-top: 66px;
+    font-family: "Anton", serif;
+    flex-direction: ;
+}
+@media (min-width: 576px) {
+    .circle-border {
+        padding-bottom: 10px;
+        border-bottom: 3px #E6E6E6 solid;
+    }
+}
+
+/*.circle-border {*/
+/*    !*padding-bottom: 10px;*!*/
+/*    border-bottom: 3px #E6E6E6 solid;*/
+/*}*/
+/*#nav-strip {*/
+/*    height:70px;*/
+/*    position: absolute;*/
+/*    top:-5em;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    !*background-color: white;*!*/
+/*}*/
+/*#list-view {*/
+/*    !*text-align: center;*!*/
+/*    padding:12px;*/
+/*    margin: 0;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    !*background: hotpink;*!*/
+/*    font-size: 18px;*/
+
+/*    !*align-content: ;*!*/
+/*}*/

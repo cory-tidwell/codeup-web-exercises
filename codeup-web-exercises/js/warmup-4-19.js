@@ -13,7 +13,7 @@ function byThree() {
     var result = [];
     for(var i = 1; i <= 15; i++) {
         if(i % 3 === 0) {
-            console.log(i);
+            //console.log(i);
             result.push(i);
         } //else return false;
     } return result;

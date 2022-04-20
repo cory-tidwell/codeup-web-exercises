@@ -1,0 +1,68 @@
+
+.navbar {
+    background-color: lightgrey;
+}
+.btn {
+    background-color: lightgrey;
+}
+img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+}
+.jumbotron {
+    background-image: url("pizza.png");
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+}
+.container-fluid {
+    padding: 0;
+
+}
+.display-4 {
+    /*margin: 0;*/
+    text-align: center;
+    /*padding: ;*/
+    opacity: 50%;
+    background-color: white;
+    width: 100%;
+}
+.nav-link {
+    background-color: lightgrey;
+}
+.choose-crust {
+    /*float: right;*/
+    background-color: blue;
+    color: white;
+}
+.list-group {
+    margin: 2em 2em;
+    list-style: none;
+    /*border-style: solid;*/
+    /*border-width: 3px 3px 3px 3px;*/
+    outline: auto;
+}
+.choose-crust {
+    list-style: none;
+}
+.card-header {
+    /*border-style: solid;*/
+    /*border-width: 3px 3px 3px 3px;*/
+    /*border-color: lightgrey;*/
+}
+.list-border {
+    /*border-width: 3px 3px 3px 3px;*/
+    /*border-color: lightgrey;*/
+    /*border-bottom: 1px solid lightgrey;*/
+    padding-left: 18px;
+}
+.next {
+    float: right;
+    background-color: blue;
+    color: white;
+}
+.custom-select-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
