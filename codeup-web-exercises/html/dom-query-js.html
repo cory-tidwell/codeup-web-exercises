@@ -24,7 +24,11 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
-
+<button id="btn1">Click Me!</button>
+<button id="btn2">Click Me!</button>
+<button id="btn3">Click Me!</button>
+<button id="btn4">Click Me!</button>
+<!--<button id="btn2">Remove Event Listener</button>-->
 <script>
     (function() {
         "use strict";
@@ -33,14 +37,14 @@
         console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-       mainHeader.innerHTML = "Javascript is Cool"
-        console.log(mainHeader.innerHTML);
+       // mainHeader.innerHTML = "Javascript is Cool"
+       //  console.log(mainHeader.innerHTML);
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
         console.log(subHeader);
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.setAttribute("style", "color: blue")
+        // subHeader.setAttribute("style", "color: blue")
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
         console.log(listItems)
@@ -51,18 +55,53 @@
         // })
         // console.log(myColor);
     //     function changeColor(){
-        for(let i = 0; i < listItems.length; i+=2) {
-            console.log(listItems[i]);
-            listItems[i].setAttribute("style", "color:grey");
-        }
+    //     for(const p of listItems) {
+    //         if(p % 2 == 0) {
+    //            return p.setAttribute("style", "color:grey");
+    //         }
+    //     }
+    //     for(let i = 0; i < listItems.length; i+=2) {
+    //         console.log(listItems[i]);
+    //         listItems[i].setAttribute("style", "color:grey");
+    //     }
         // TODO: Set text color of li with dbid = 1 to blue
-            listItems[0].setAttribute("style", "color:blue");
+        var x = document.querySelector("li");
+        console.log(x);
+        x.setAttribute("style", "color:blue");
+        //     listItems[0].setAttribute("style", "color:blue");
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph")
         console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished"
+       // subParagraphs[0].innerHTML = "Mission Accomplished"
+
+        var test = document.getElementsByTagName("body");
+       console.log(test);
+       // document.getElementsByTagName("body")[0].setAttribute("style", "background-color:red");
+
+        var btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', function(event){
+            mainHeader.innerHTML = "Javascript is Cool"
+            console.log(mainHeader.innerHTML);
+        });
+
+        var btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click', function (event) {
+            subHeader.setAttribute("style", "color: blue")
+        });
+
+        var btn3 = document.getElementById('btn3');
+        btn3.addEventListener('click', function (event) {
+            for(let i = 0; i < listItems.length; i+=2) {
+                console.log(listItems[i]);
+                listItems[i].setAttribute("style", "color:grey");
+            }
+        });
+        var btn4 = document.getElementById('btn4');
+        btn4.addEventListener('click', function (event) {
+            subParagraphs[0].innerHTML = "Mission Accomplished"
+        });
     })();
 </script>
 </body>
