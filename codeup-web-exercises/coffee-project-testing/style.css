@@ -20,7 +20,7 @@
 }
 
 body {
-    background-image: url("/img/bg-img(dark).png");
+    background-image: url("/codeup-web-exercises/coffee-project-testing/images/bg-img(dark).png");
     background-size: cover;
     padding: 25px;
     font-family: 'Heebo';
