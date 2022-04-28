@@ -64,8 +64,19 @@ $('#black').dblclick( function (){
     $('h4').css('color', 'black')
 })
 
+$('#offSwitch').click(function (){
+    $('#red').off();
+    $('#black').off();
+})
 
-
+$('#onSwitch').click(function (){
+    $('#red').on('click', function (){
+        $('h4').css('color', 'red')
+    });
+    $('#black').on('dblclick', function (){
+        $('h4').css('color', 'black')
+    });
+})
 
 
 
