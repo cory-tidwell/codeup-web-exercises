@@ -1,0 +1,41 @@
+#main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1 {
+    font-size: 3.5rem;
+}
+
+button {
+    font-size: 2rem;
+}
+
+dt {
+    margin: 1.5rem;
+}
+.invisible {
+    visibility: hidden;
+}
+
+/*body {*/
+/*    margin: 60px;*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));*/
+/*    grid-gap: 60px;*/
+/*}*/
+
+.border {
+    font-size: 1.6rem;
+    display: grid;
+    place-items: center;
+    min-height: 200px;
+    border: 8px solid;
+    padding: 1rem;
+}
+
+.full {
+    border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+}
+
+for(i=0;i<)
