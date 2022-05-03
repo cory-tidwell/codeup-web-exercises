@@ -6,13 +6,31 @@
 h1 {
     font-size: 3.5rem;
 }
-
+h3{
+    margin-left: 2.8rem
+}
+.center {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+li {
+    margin-left: 2rem;
+}
 button {
     font-size: 2rem;
 }
-
+/*img {*/
+/*    height: 100px;*/
+/*    width: 100px;*/
+/*}*/
 dt {
     margin: 1.5rem;
+}
+dd {
+    margin-left: 1.5rem;
 }
 .invisible {
     visibility: hidden;
@@ -25,16 +43,17 @@ dt {
 /*    grid-gap: 60px;*/
 /*}*/
 
-.border {
-    font-size: 1.6rem;
-    display: grid;
-    place-items: center;
-    min-height: 200px;
-    border: 8px solid;
-    padding: 1rem;
-}
+/*.border {*/
+/*    font-size: 1.6rem;*/
+/*    display: grid;*/
+/*    place-items: center;*/
+/*    min-height: 200px;*/
+/*    border: 8px solid;*/
+/*    padding: 1rem;*/
+/*}*/
 
 .full {
+    border: 8px solid;
     border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
 }
 
