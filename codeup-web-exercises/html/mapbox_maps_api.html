@@ -3,32 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapbox API</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <!--API Stuff-->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 
 </head>
 <body>
+<h2 class="text-center mt-2">Map Marker</h2>
+<div class="container mt-3" id='map' style='width: 700px; height: 600px;'></div>
 
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div class="d-flex justify-content-center mt-2">
+    <button id="zoom1" class="btn btn-dark btn-sm mx-2" type="button">Zoom1</button>
+    <button id="zoom2" class="btn btn-dark btn-sm mx-2" type="button">zoom2</button>
+    <button id="zoom3" class="btn btn-dark btn-sm mx-2" type="button">zoom3</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+
+<!-- Mapbox Geocoder Util Methods -->
+<script src="../js/jquery/geocode.js"></script>
+
 <script>
+    var myApiKey;
     mapboxgl.accessToken = 'pk.eyJ1IjoiY29yeXRpZHdlbGwyIiwiYSI6ImNsMnFsZTY4aTBnY2IzY3FyZTQwZjA5Z3IifQ.QMQfEYJN8Eu-cGXdAohkww';
+    myApiKey = mapboxgl.accessToken;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9 // starting zoom
+        center: [-76.55492, 39.29249], // starting position [lng, lat]
+        zoom: 8 // starting zoom
     });
     // Create a new marker.
-    const marker = new mapboxgl.Marker()
-        .setLngLat([30.5, 50.5])
-        .addTo(map);
+    // const marker = new mapboxgl.Marker()
+    //     .setLngLat([-76.55492, 39.29249])
+    //     .addTo(map);
 
-    navigator.geolocation.getCurrentPosition(function(location) {
-        console.log(location.coords.latitude);
-        console.log(location.coords.longitude);
-        console.log(location.coords.accuracy);
+    $("#zoom1").click(function () {
+        map.setZoom(5)
     });
+    $("#zoom2").click(function () {
+        map.setZoom(10)
+    });
+    $("#zoom3").click(function () {
+        map.setZoom(20)
+    });
+    var favRes = [
+        {
+            name: "Zorba's Bar & Grill",
+            address: "4710 Eastern Ave, Baltimore, MD 21224",
+            coordinates: {
+                lng: -76.55492,
+                lat: 39.29249
+            },
+            img: "images/zorbas.jpeg"
+        },
+        {
+            name: "Level Small Plates Lounge",
+            address: "69 West Street Annapolis, MD 21401",
+            coordinates: {
+                lng: -76.49598,
+                lat: 38.97839
+            },
+            img : "images/res2.jpeg"
+        },
+        {
+            name: "Fogo de Chão Brazilian Steakhouse",
+            address: "600 E Pratt St #102, Baltimore, MD 21202",
+            coordinates: {
+                lng: -76.60683,
+                lat: 39.29805
+            },
+            img : "images/fogo.jpeg"
+        }]
+     geocode(favRes[0].address, myApiKey).then(function (result) {
+        console.log(myApiKey);
+        map.setCenter(result);
+    })
+
+    favRes.forEach(function(loc) {
+        console.log(loc.coordinates)
+
+        let locations = new mapboxgl.Marker()
+            .setLngLat(loc.coordinates)
+            .addTo(map);
+
+        var favPopup = new mapboxgl.Popup()
+            .setLngLat(loc.coordinates)
+            .setHTML("<h5><em>" + loc.name + "</em></h5>" + "<img src=" + loc.img + ">" );
+
+        locations.setPopup(favPopup)
+        });
+
 </script>
 </body>
 </html>
