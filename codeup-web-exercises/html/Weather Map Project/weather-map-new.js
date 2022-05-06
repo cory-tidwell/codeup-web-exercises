@@ -1,6 +1,7 @@
 "use strict";
 
 mapboxgl.accessToken = MAPBOX_KEY;
+
 var map;
 var marker;
 
@@ -16,11 +17,14 @@ function errorLocation(){
     setupMap([-98.4946, 29.4252])
 }
 
+//-------------------Mapbox with marker-------------------//
 function setupMap(center) {
     map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
+        style: 'mapbox://styles/mapbox/dark-v10',
         zoom: 8,
+        pitch: 60,
+        bearing: -60,
         center: [-98.4946, 29.4252],
     });
      marker = new mapboxgl.Marker({
@@ -31,11 +35,9 @@ function setupMap(center) {
 
         function onDragEnd() {
         const lngLat = marker.getLngLat();
-        coordinates.style.display = 'block';
-        coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-    }
+         }
 
-    // marker.on('dragend', onDragEnd);
+    //-------------------Add Drag Marker and Search capability-------------------//
     marker.on('dragend', () => {
         let long1 = marker.getLngLat().lng;
         let lat1 = marker.getLngLat().lat;
@@ -53,53 +55,72 @@ function setupMap(center) {
             cardDataDisplay(data);
         })
     });
+    let submitBtn = document.getElementById("towninfo");
+    let form = document.getElementById('city');
+    submitBtn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        geocode(form.value, MAPBOX_KEY).then(async (data) =>{
+            map.setCenter(data);
+            marker.setLngLat(data);
+            let long = marker.getLngLat().lng;
+            let lat = marker.getLngLat().lat;
+            let coordinate = [long, lat];
+            gettingWeather(coordinate);
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${coordinate}.json?access_token=${MAPBOX_KEY}`)
+                .then(async (response) => {
+                    let data = await response.json();
+                    console.log(data)
+                    document.getElementById('location').innerHTML = `${data.features[3].text}`;
+                    form.value = "";
+                    // document.getElementById('location').innerHTML = form.value;
+                })
+        })
+    })
 }
-//     const map = new mapboxgl.Map({
-//         container: 'map', // container ID
-//         style: 'mapbox://styles/mapbox/outdoors-v11', // style URL
-//         zoom: 9, // starting zoom
-//         center: center
-//     });
-//
-//     const marker = new mapboxgl.Marker({
-//         draggable: true
-//     })
-//         .setLngLat([-98.4946, 29.4252])
-//         .addTo(map);
-//
-//     function onDragEnd() {
-//         const lngLat = marker.getLngLat();
-//         coordinates.style.display = 'block';
-//         coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-//     }
-//
-//     marker.on('dragend', onDragEnd);
-//
-// }
 
 
+function gettingWeather(lat, lon){
+    let url = new URL('http://api.openweathermap.org/data/2.5/onecall')
+    url.search = new URLSearchParams({
+        lat: marker.getLngLat().lat,
+        lon: marker.getLngLat().lng,
+        appid: OPEN_WEATHER_APPID,
+        exclude: 'minutely,hourly,alerts',
+        units: 'imperial',
+    });
 
+    fetch(url).then( async (response) => {
+        let data = await response.json();
+        console.log(data);
+        cardDataDisplay(data);
+    })
+}
 
+function cardDataDisplay(data) {
+    let html = "";
+    for (let i = 0; i < 5; i++) {
+        let inner = document.getElementById('info');
+        let date = new Date(Date.now() + 1000 * 60 * 60 * 24 * i).toDateString();
+        inner.innerHTML =
+            html +=
+                `<div class="card-group flex-row my-5">
+                        <div class="card1">
+                            <div class="card-body">
+                                <h5 class="card-header back">${date}</h5>
+                                    <p class="card-text">${data.daily[i].temp.day} &#8457 / ${data.daily[i].temp.min} &#8457</p>
+                                    <p class="card-text">Description: ${data.daily[i].weather[0].description}</p>
+                                    <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png" class="w-50 mx-5" alt="">
+                                    <p class="card-text">Humidity: ${data.daily[i].humidity}</p>
+                                    <p class="card-text">Wind: ${data.daily[i].wind_speed}</p>
+                                    <p class="card-text">Pressure: ${data.daily[i].pressure} </p>
+                            </div>
+                        </div>
+                    </div>`
+    }
+    return html
+}
 
-
-// var darkSkyUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyToken + "/29.4252, -98.4946"
-//
-// function getData() {
-//     $.get(darkSkyUrl).done(function (data){
-//
-//
-//         var day = data.daily.data;
-//         var todayTemperature = data.currently.temperature;
-//         var html = '';
-//         var today = new Date().getDay();
-//
-//         for (var i = 0; i < day.length - 1; i++) {
-//             var icon = day[i].icon;
-//             var dayOfWeek = (new Date((day[i].time) * 1000)).getDay();
-//             html += '<div class="eachDay">';
-//         }
-//     })
-// }
+//-------------------Lat and Lon search functionality-------------------//
 const app = {
     init: () => {
         document
@@ -168,7 +189,7 @@ const app = {
                   class="card-img-top"
                   alt="${day.weather[0].description}"
                 />
-                <div class="card-body">
+                <div class="card-body test">
                   <h3 class="card-title">${day.weather[0].main}</h3>
                   <p class="card-text">High ${day.temp.max}&deg;F Low ${
                         day.temp.min
@@ -196,45 +217,4 @@ const app = {
             .join(' ');
     },
 };
-
-
 app.init();
-function gettingWeather(lat, lon){
-    let url = new URL('http://api.openweathermap.org/data/2.5/onecall')
-    url.search = new URLSearchParams({
-        lat: marker.getLngLat().lat,
-        lon: marker.getLngLat().lng,
-        appid: OPEN_WEATHER_APPID,
-        exclude: 'minutely,hourly,alerts',
-        units: 'imperial',
-    });
-
-    fetch(url).then( async (response) => {
-        let data = await response.json();
-        console.log(data);
-        cardDataDisplay(data);
-    })
-}
-function cardDataDisplay(data) {
-    let html = "";
-    for (let i = 0; i < 5; i++) {
-        let inner = document.getElementById('info');
-        let date = new Date(Date.now() + 1000 * 60 * 60 * 24 * i).toDateString();
-        inner.innerHTML =
-            html +=
-                `<div class="card-group flex-row my-5">
-                        <div class="card1">
-                            <div class="card-body">
-                                <h5 class="card-header back">${date}</h5>
-                                    <p class="card-text">${data.daily[i].temp.day} &#8457 / ${data.daily[i].temp.min} &#8457</p>
-                                    <p class="card-text">Description: ${data.daily[i].weather[0].description}</p>
-                                    <img src="http://openweathermap.org/img/wn/${data.daily[i].weather[0].icon}.png" class="w-50 mx-5" alt="">
-                                    <p class="card-text">Humidity: ${data.daily[i].humidity}</p>
-                                    <p class="card-text">Wind: ${data.daily[i].wind_speed}</p>
-                                    <p class="card-text">Pressure: ${data.daily[i].pressure} </p>
-                            </div>
-                        </div>
-                    </div>`
-    }
-    return html
-}

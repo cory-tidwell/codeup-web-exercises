@@ -1,15 +1,9 @@
 mapboxgl.accessToken = MAPBOX_KEY;
+    // 'pk.eyJ1IjoiY29yeXRpZHdlbGwyIiwiYSI6ImNsMnFsZTY4aTBnY2IzY3FyZTQwZjA5Z3IifQ.QMQfEYJN8Eu-cGXdAohkww';
 
-// var map = new mapboxgl.Map({
-//     container: 'map',
-//     style: "mapbox://styles/mapbox/outdoors-v11",
-//     center: [-98.4946, 29.4252],
-//     zoom: 12,
-// })
 
-// var marker;
 
-var geocoder = getGeocoder();
+const geocoder = getGeocoder();
 
 addGeocoderToMap(geocoder);
 
@@ -49,4 +43,15 @@ function setMapEvent() {
         marker.setLngLat(event.lngLat);
         getForecast([event.lngLat.lng,event.lngLat.lat]);
     });
+}
+function geocode(search, token) {
+    var baseUrl = 'https://api.mapbox.com';
+    var endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+        .then(function(res) {
+            return res.json();
+            // to get all the data from the request, comment out the following three lines...
+        }).then(function(data) {
+            return data.features[0].center;
+        });
 }
