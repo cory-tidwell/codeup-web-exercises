@@ -92,9 +92,6 @@ let list = '<ul>';
 
 
   for (let developer of developers) {
-
-
-
     list += `<li>${developer}</li><br><br>`;
   }
 list += `</ul>`;
@@ -102,6 +99,5 @@ list += `</ul>`;
   // TODO: rewrite the assignment below to use template strings
 //   list += '<li>' + developer + '</li>';
 // });
-
 
 $('#es6').html(list);
