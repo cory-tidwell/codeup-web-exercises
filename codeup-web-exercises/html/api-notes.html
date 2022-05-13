@@ -6,12 +6,20 @@
 </head>
 <body>
 
-<div>
+<div id="page-loading">Loading</div>
 
-
-
+<div id="movie-posts">
+     <div class="movie"></div>
 </div>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<form id="new-movie">
+    <label for="title">Movie Title</label>
+    <input id="title" name="title" type="text">
+    <label for="rating">Rating</label>
+    <input id="rating" name="rating" type="text">
+    <input type="submit" id="add-new-movie">
+    <input type="button" id="update" value="save edits">
+</form>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="../js/api-notes.js"></script>
 </body>
 </html>
